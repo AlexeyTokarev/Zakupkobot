@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TenderSearchService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:element name="GetTenders">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q1:GetTendersPagedRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersResult" nillable="true" type="q2:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q3:GetTendersPagedRequest" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" minOccurs="0" name="authInfo" nillable="true" type="q4:AuthInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersAuthResult" nillable="true" type="q5:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersLimited">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q6:GetTendersLimitedAndPagedRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersLimitedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersLimitedResult" nillable="true" type="q7:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersLimitedAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q8:GetTendersLimitedAndPagedRequest" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" minOccurs="0" name="authInfo" nillable="true" type="q9:AuthInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersLimitedAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersLimitedAuthResult" nillable="true" type="q10:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForOrganization">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q11:GetTendersPagedRequest" />
+            <xs:element minOccurs="0" name="organizationCommonId" nillable="true" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForOrganizationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersForOrganizationResult" nillable="true" type="q12:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForOrganizationAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q13:GetTendersPagedRequest" />
+            <xs:element minOccurs="0" name="organizationCommonId" nillable="true" type="xs:int" />
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" minOccurs="0" name="authInfo" nillable="true" type="q14:AuthInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForOrganizationAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersForOrganizationAuthResult" nillable="true" type="q15:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q16:GetTendersPagedRequest" />
+            <xs:element minOccurs="0" name="userCommonId" nillable="true" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersForUserResult" nillable="true" type="q17:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForUserAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q18:GetTendersPagedRequest" />
+            <xs:element minOccurs="0" name="userCommonId" nillable="true" type="xs:int" />
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" minOccurs="0" name="authInfo" nillable="true" type="q19:AuthInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersForUserAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersForUserAuthResult" nillable="true" type="q20:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSimilarTenders">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q21:GetSimilarTendersPagedRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSimilarTendersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetSimilarTendersResult" nillable="true" type="q22:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSimilarTendersAuth">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q23:GetSimilarTendersPagedRequest" />
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" minOccurs="0" name="authInfo" nillable="true" type="q24:AuthInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSimilarTendersAuthResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetSimilarTendersAuthResult" nillable="true" type="q25:GetTendersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetOkdpStatistics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="codes" nillable="true" type="q26:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetOkdpStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetOkdpStatisticsResult" nillable="true" type="q27:ArrayOfStatistics" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRegionStatistics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="codes" nillable="true" type="q28:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRegionStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetRegionStatisticsResult" nillable="true" type="q29:ArrayOfStatistics" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersCurrencyStatistics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="request" nillable="true" type="q30:GetTendersPagedRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTendersCurrencyStatisticsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" minOccurs="0" name="GetTendersCurrencyStatisticsResult" nillable="true" type="q31:ArrayOfCurrencyStatistics" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="GetTendersPagedRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts" base="q1:GetTendersRequestFilterBase">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" minOccurs="0" name="FilterData" nillable="true" type="q2:PagedFilter" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetTendersPagedRequest" nillable="true" type="tns:GetTendersPagedRequest" />
+      <xs:complexType name="GetTendersLimitedAndPagedRequest">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts" base="q3:GetTendersRequestFilterBase">
+            <xs:sequence>
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" minOccurs="0" name="FilterData" nillable="true" type="q4:LimitedAndPagedFilter" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetTendersLimitedAndPagedRequest" nillable="true" type="tns:GetTendersLimitedAndPagedRequest" />
+      <xs:complexType name="GetTendersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExcludedCurrencyStatistics" nillable="true" type="tns:ArrayOfCurrencyStatistics" />
+          <xs:element minOccurs="0" name="ExecutionTime" type="xs:double" />
+          <xs:element minOccurs="0" name="IsExternalExcluded" type="xs:boolean" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" minOccurs="0" name="Tenders" nillable="true" type="q5:PagingSearchResultOfTenderInfo9G_Pu8y1L" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetTendersResponse" nillable="true" type="tns:GetTendersResponse" />
+      <xs:complexType name="ArrayOfCurrencyStatistics">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencyStatistics" nillable="true" type="tns:CurrencyStatistics" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCurrencyStatistics" nillable="true" type="tns:ArrayOfCurrencyStatistics" />
+      <xs:complexType name="CurrencyStatistics">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalCost" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CurrencyStatistics" nillable="true" type="tns:CurrencyStatistics" />
+      <xs:complexType name="ArrayOfTenderInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TenderInfo" nillable="true" type="tns:TenderInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTenderInfo" nillable="true" type="tns:ArrayOfTenderInfo" />
+      <xs:complexType name="TenderInfo">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" base="q6:TenderInfoBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="HideParticipantsInfo" type="xs:boolean" />
+              <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" minOccurs="0" name="TenderStatus" type="q7:TenderStatus" />
+              <xs:element minOccurs="0" name="Weight" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="TenderInfo" nillable="true" type="tns:TenderInfo" />
+      <xs:complexType name="GetSimilarTendersPagedRequest">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" minOccurs="0" name="FilterData" nillable="true" type="q8:PagedFilter" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TenderId" nillable="true" type="q9:ArrayOfint" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetSimilarTendersPagedRequest" nillable="true" type="tns:GetSimilarTendersPagedRequest" />
+      <xs:complexType name="ArrayOfStatistics">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Statistics" nillable="true" type="tns:Statistics" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfStatistics" nillable="true" type="tns:ArrayOfStatistics" />
+      <xs:complexType name="Statistics">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TendersCount" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Statistics" nillable="true" type="tns:Statistics" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" />
+      <xs:complexType name="GetTendersRequestFilterBase">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:GetTendersRequestBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IsHidden" type="xs:boolean" />
+              <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MarketPlaceIds" nillable="true" type="q1:ArrayOfint" />
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="OrganizationLevels" nillable="true" type="q2:ArrayOfTenderOrganizationLevel" />
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="PurchaseMethods" nillable="true" type="q3:ArrayOfTenderPurchaseMethod" />
+              <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SectionIds" nillable="true" type="q4:ArrayOfint" />
+              <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TenderRuleIds" nillable="true" type="q5:ArrayOfint" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetTendersRequestFilterBase" nillable="true" type="tns:GetTendersRequestFilterBase" />
+      <xs:complexType name="GetTendersRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationEndDateFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ApplicationEndDateTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerInn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateImportedFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateImportedTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DatePublishedFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DatePublishedTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DocumentSearchEnabled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasApplications" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSMP" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Keywords" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxApplicationGuarantee" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxPrice" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MinApplicationGuarantee" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MinPrice" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Okdp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizerInn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SearchKind" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TenderId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TradeNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TradeRegistrationNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetTendersRequestBase" nillable="true" type="tns:GetTendersRequestBase" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" />
+      <xs:complexType name="LimitedAndPagedFilter">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:PagedFilter">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ItemsLimit" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="LimitedAndPagedFilter" nillable="true" type="tns:LimitedAndPagedFilter" />
+      <xs:complexType name="PagedFilter">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:SortedFilter">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PageCount" type="xs:int" />
+              <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+              <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PagedFilter" nillable="true" type="tns:PagedFilter" />
+      <xs:complexType name="SortedFilter">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" minOccurs="0" name="SortingDirection" nillable="true" type="q1:SortingDirection" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" minOccurs="0" name="SortingField" nillable="true" type="q2:SortingField" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SortedFilter" nillable="true" type="tns:SortedFilter" />
+      <xs:complexType name="TenderInfoBase">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" base="q3:EntityDtoBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ApplicationEndDate" nillable="true" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ApplicationGuarantee" type="xs:decimal" />
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="ApplicationGuaranteeType" type="q4:TenderGuaranteeType" />
+              <xs:element minOccurs="0" name="ApplicationStartDate" nillable="true" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ContractGuarantee" nillable="true" type="xs:decimal" />
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="ContractGuaranteeType" nillable="true" type="q5:TenderGuaranteeType" />
+              <xs:element minOccurs="0" name="CurrencyCode" type="xs:int" />
+              <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomerKladrRegions" nillable="true" type="q6:ArrayOfKeyValueOfstringstring" />
+              <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomerRegionNames" nillable="true" type="q7:ArrayOfstring" />
+              <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Customers" nillable="true" type="q8:ArrayOfKeyValueOfstringstring" />
+              <xs:element minOccurs="0" name="DatePublished" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="HasApplications" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IsSMP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="KladrRegionName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="LotName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="MarketPlaceId" type="xs:int" />
+              <xs:element minOccurs="0" name="MarketPlaceName" nillable="true" type="xs:string" />
+              <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="MarketPlaceType" type="q9:MarketPlaceType" />
+              <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="OrganizerInn" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="OrganizerName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+              <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="PurchaseMethod" type="q10:TenderPurchaseMethod" />
+              <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="RegistrationNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+              <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" minOccurs="0" name="State" type="q11:TenderState" />
+              <xs:element minOccurs="0" name="StateAtMarketPlace" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="TenderId" type="xs:int" />
+              <xs:element minOccurs="0" name="TenderRuleId" type="xs:int" />
+              <xs:element minOccurs="0" name="TenderRuleName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="TradeName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="TenderInfoBase" nillable="true" type="tns:TenderInfoBase" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Common.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:simpleType name="SortingDirection">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Asc">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Desc">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="SortingDirection" nillable="true" type="tns:SortingDirection" />
+      <xs:simpleType name="SortingField">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Price">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DatePublished">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DateCreated">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DateBaseDataChanged">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TenderId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LotName">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ApplicationEndDate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="State">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PurchaseMethod">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Weight">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="SortingField" nillable="true" type="tns:SortingField" />
+      <xs:simpleType name="TenderStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FZ44_TenderPlan" />
+          <xs:enumeration value="FZ44_Notification" />
+          <xs:enumeration value="FZ44_Contract" />
+          <xs:enumeration value="FZ223_TenderPlan" />
+          <xs:enumeration value="FZ223_Notification" />
+          <xs:enumeration value="FZ223_Contract" />
+          <xs:enumeration value="RTS_Notification" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TenderStatus" nillable="true" type="tns:TenderStatus" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+      <xs:complexType name="ArrayOfKeyValueOfstringstring">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Key" nillable="true" type="xs:string" />
+                <xs:element name="Value" nillable="true" type="xs:string" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common.Contracts.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="ArrayOfTenderOrganizationLevel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TenderOrganizationLevel" type="tns:TenderOrganizationLevel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTenderOrganizationLevel" nillable="true" type="tns:ArrayOfTenderOrganizationLevel" />
+      <xs:simpleType name="TenderOrganizationLevel">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Fz94">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Fz223">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Commercial">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Fz44">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TenderOrganizationLevel" nillable="true" type="tns:TenderOrganizationLevel" />
+      <xs:complexType name="ArrayOfTenderPurchaseMethod">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TenderPurchaseMethod" type="tns:TenderPurchaseMethod" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTenderPurchaseMethod" nillable="true" type="tns:ArrayOfTenderPurchaseMethod" />
+      <xs:simpleType name="TenderPurchaseMethod">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ApplicationRequest">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Tender">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="QuotationsRequest">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Auction">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LimitedTender">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DoubleStagedTender">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Single">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PricesRequest">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Other">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Preselection">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TenderPurchaseMethod" nillable="true" type="tns:TenderPurchaseMethod" />
+      <xs:simpleType name="TenderGuaranteeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None" />
+          <xs:enumeration value="Percent" />
+          <xs:enumeration value="Currency" />
+          <xs:enumeration value="TenderDocuments" />
+          <xs:enumeration value="BankGaranty" />
+          <xs:enumeration value="BankGarantyWithCash" />
+          <xs:enumeration value="PercentTaxFree" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TenderGuaranteeType" nillable="true" type="tns:TenderGuaranteeType" />
+      <xs:simpleType name="MarketPlaceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Internal">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="External">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="MarketPlaceType" nillable="true" type="tns:MarketPlaceType" />
+      <xs:simpleType name="TenderState">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ApplicationsFillingNotCompleted">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ApplicationsFillingCompleted">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Completed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TenderState" nillable="true" type="tns:TenderState" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.Common.WcfServices.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" />
+      <xs:complexType name="PagingSearchResultOfTenderInfo9G_Pu8y1L">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.WcfServices.Contracts.Services.TenderService.Messaging" name="_x003C_Items_x003E_k__BackingField" nillable="true" type="q1:ArrayOfTenderInfo" />
+          <xs:element name="_x003C_TotalRows_x003E_k__BackingField" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PagingSearchResultOfTenderInfo9G_Pu8y1L" nillable="true" type="tns:PagingSearchResultOfTenderInfo9G_Pu8y1L" />
+      <xs:complexType name="EntityDtoBase">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:EntityDtoBaseWithTypedIdOfint">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="EntityDtoBase" nillable="true" type="tns:EntityDtoBase" />
+      <xs:complexType name="EntityDtoBaseWithTypedIdOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="RowVersion" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EntityDtoBaseWithTypedIdOfint" nillable="true" type="tns:EntityDtoBaseWithTypedIdOfint" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BaseTrade.TradeRegistry.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="AuthInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CommonOrganizationId" type="xs:int" />
+          <xs:element minOccurs="0" name="CommonUserId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsUserAuthenticated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserFullName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AuthInfo" nillable="true" type="tns:AuthInfo" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ITenderSearchService_GetTenders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTenders" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTenders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersAuth" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersLimited" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersLimitedAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersLimitedAuth" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersLimitedAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersLimitedAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForOrganization" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForOrganizationAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForOrganizationAuth" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForOrganizationAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForOrganizationAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForUser" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForUserAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForUserAuth" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersForUserAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersForUserAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetSimilarTenders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarTenders" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetSimilarTenders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarTendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetSimilarTendersAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarTendersAuth" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetSimilarTendersAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarTendersAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetOkdpStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOkdpStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetOkdpStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOkdpStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetRegionStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetRegionStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersCurrencyStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersCurrencyStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ITenderSearchService_GetTendersCurrencyStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTendersCurrencyStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITenderSearchService">
+    <wsdl:operation name="GetTenders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTenders" message="tns:ITenderSearchService_GetTenders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersResponse" message="tns:ITenderSearchService_GetTenders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersAuth" message="tns:ITenderSearchService_GetTendersAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersAuthResponse" message="tns:ITenderSearchService_GetTendersAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersLimited" message="tns:ITenderSearchService_GetTendersLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersLimitedResponse" message="tns:ITenderSearchService_GetTendersLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersLimitedAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersLimitedAuth" message="tns:ITenderSearchService_GetTendersLimitedAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersLimitedAuthResponse" message="tns:ITenderSearchService_GetTendersLimitedAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForOrganization" message="tns:ITenderSearchService_GetTendersForOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForOrganizationResponse" message="tns:ITenderSearchService_GetTendersForOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForOrganizationAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForOrganizationAuth" message="tns:ITenderSearchService_GetTendersForOrganizationAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForOrganizationAuthResponse" message="tns:ITenderSearchService_GetTendersForOrganizationAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForUser" message="tns:ITenderSearchService_GetTendersForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForUserResponse" message="tns:ITenderSearchService_GetTendersForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForUserAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForUserAuth" message="tns:ITenderSearchService_GetTendersForUserAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersForUserAuthResponse" message="tns:ITenderSearchService_GetTendersForUserAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimilarTenders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetSimilarTenders" message="tns:ITenderSearchService_GetSimilarTenders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetSimilarTendersResponse" message="tns:ITenderSearchService_GetSimilarTenders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimilarTendersAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetSimilarTendersAuth" message="tns:ITenderSearchService_GetSimilarTendersAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetSimilarTendersAuthResponse" message="tns:ITenderSearchService_GetSimilarTendersAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOkdpStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetOkdpStatistics" message="tns:ITenderSearchService_GetOkdpStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetOkdpStatisticsResponse" message="tns:ITenderSearchService_GetOkdpStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetRegionStatistics" message="tns:ITenderSearchService_GetRegionStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetRegionStatisticsResponse" message="tns:ITenderSearchService_GetRegionStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersCurrencyStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersCurrencyStatistics" message="tns:ITenderSearchService_GetTendersCurrencyStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITenderSearchService/GetTendersCurrencyStatisticsResponse" message="tns:ITenderSearchService_GetTendersCurrencyStatistics_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITenderSearchService" type="tns:ITenderSearchService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTenders">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTenders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersAuth">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersLimited">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersLimitedAuth">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersLimitedAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForOrganization">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersForOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForOrganizationAuth">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersForOrganizationAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForUser">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersForUserAuth">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersForUserAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimilarTenders">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetSimilarTenders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimilarTendersAuth">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetSimilarTendersAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOkdpStatistics">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetOkdpStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionStatistics">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetRegionStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTendersCurrencyStatistics">
+      <soap:operation soapAction="http://tempuri.org/ITenderSearchService/GetTendersCurrencyStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TenderSearchService">
+    <wsdl:port name="BasicHttpBinding_ITenderSearchService" binding="tns:BasicHttpBinding_ITenderSearchService">
+      <soap:address location="http://starplusapi-stable.fintender.ru/TenderSearchService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
